@@ -17,19 +17,25 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class LattestViewModel extends AndroidViewModel  {
+public class LattestViewModel extends AndroidViewModel {
 
     private MutableLiveData<String> pr1, pt1, pr2, pt2, pr3, pt3, pr4, pt4, pr5, pt5, pr6, pt6, pr7, pt7, pr8, pt8, pr9, pt9;
 
-
-    public String url = "https://www.freeforexapi.com/api/live?pairs=EURUSD,EURGBP,GBPUSD,USDJPY,AUDUSD,USDCHF,NZDUSD,USDCAD,USDZAR";
 
     public LattestViewModel(@NonNull Application application) {
         super(application);
         inittext();
         getdata();
-
+        getdata2();
+        getdata3();
+        getdata4();
+        getdata5();
+        getdata6();
+        getdata7();
+        getdata8();
+        getdata9();
     }
+
     private void inittext() {
         pr1 = new MutableLiveData<>();
         pt1 = new MutableLiveData<>();
@@ -54,6 +60,8 @@ public class LattestViewModel extends AndroidViewModel  {
 
     public void getdata() {
         RequestQueue queue = Volley.newRequestQueue(getApplication());
+        String url = "https://api.exchangerate.host/convert?from=EUR&to=USD";
+
 
 // Request a string response from the provided URL.
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
@@ -62,63 +70,10 @@ public class LattestViewModel extends AndroidViewModel  {
                     public void onResponse(String response) {
                         try {
                             JSONObject jsonObject = new JSONObject(response);
-                            JSONObject object = jsonObject.getJSONObject("rates");
-                            JSONObject object1 = object.getJSONObject("EURUSD");
-                            String ss = object1.getString("rate");
-                            String tt = object1.getString("timestamp");
+                            String ss = jsonObject.getString("result");
                             pr1.setValue(ss);
-                            pt1.setValue(tt);
-
-                            JSONObject object2 = object.getJSONObject("EURGBP");
-                            String ss2 = object2.getString("rate");
-                            String tt2 = object2.getString("timestamp");
-                            pr2.setValue(ss2);
-                            pt2.setValue(tt2);
-
-                            JSONObject object3 = object.getJSONObject("GBPUSD");
-                            String ss3 = object3.getString("rate");
-                            String tt3 = object3.getString("timestamp");
-                            pr3.setValue(ss3);
-                            pt3.setValue(tt3);
-
-                            JSONObject object4 = object.getJSONObject("USDJPY");
-                            String ss4 = object4.getString("rate");
-                            String tt4 = object4.getString("timestamp");
-                            pr4.setValue(ss4);
-                            pt4.setValue(tt4);
-
-                            JSONObject object5 = object.getJSONObject("USDCHF");
-                            String ss5 = object5.getString("rate");
-                            String tt5 = object5.getString("timestamp");
-                            pr5.setValue(ss5);
-                            pt5.setValue(tt5);
-
-                            JSONObject object6 = object.getJSONObject("USDCAD");
-                            String ss6 = object6.getString("rate");
-                            String tt6 = object6.getString("timestamp");
-                            pr6.setValue(ss6);
-                            pt6.setValue(tt6);
-
-                            JSONObject object7 = object.getJSONObject("USDZAR");
-                            String ss7 = object7.getString("rate");
-                            String tt7 = object7.getString("timestamp");
-                            pr7.setValue(ss7);
-                            pt7.setValue(tt7);
-
-                            JSONObject object8 = object.getJSONObject("AUDUSD");
-                            String ss8 = object8.getString("rate");
-                            String tt8 = object8.getString("timestamp");
-                            pr8.setValue(ss8);
-                            pt8.setValue(tt8);
-
-                            JSONObject object9 = object.getJSONObject("NZDUSD");
-                            String ss9 = object9.getString("rate");
-                            String tt9 = object9.getString("timestamp");
-                            pr9.setValue(ss9);
-                            pt9.setValue(tt9);
 
 
-                            //  Toast.makeText(getApplication(), ss, Toast.LENGTH_SHORT).show();
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -135,6 +90,252 @@ public class LattestViewModel extends AndroidViewModel  {
         queue.add(stringRequest);
     }
 
+    public void getdata2() {
+        RequestQueue queue = Volley.newRequestQueue(getApplication());
+        String url = "https://api.exchangerate.host/convert?from=EUR&to=GBP";
+
+// Request a string response from the provided URL.
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+                new com.android.volley.Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONObject jsonObject = new JSONObject(response);
+                            String ss = jsonObject.getString("result");
+                            pr2.setValue(ss);
+
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+
+                    }
+                });
+
+// Add the request to the RequestQueue.
+        queue.add(stringRequest);
+    }
+
+    public void getdata3() {
+        RequestQueue queue = Volley.newRequestQueue(getApplication());
+        String url = "https://api.exchangerate.host/convert?from=GBP&to=USD";
+
+// Request a string response from the provided URL.
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+                new com.android.volley.Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONObject jsonObject = new JSONObject(response);
+                            String ss = jsonObject.getString("result");
+                            pr3.setValue(ss);
+
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+
+                    }
+                });
+
+// Add the request to the RequestQueue.
+        queue.add(stringRequest);
+    }
+
+    public void getdata4() {
+        RequestQueue queue = Volley.newRequestQueue(getApplication());
+        String url = "https://api.exchangerate.host/convert?from=USD&to=JPY";
+
+// Request a string response from the provided URL.
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+                new com.android.volley.Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONObject jsonObject = new JSONObject(response);
+                            String ss = jsonObject.getString("result");
+                            pr4.setValue(ss);
+
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+
+                    }
+                });
+
+// Add the request to the RequestQueue.
+        queue.add(stringRequest);
+    }
+
+    public void getdata5() {
+        RequestQueue queue = Volley.newRequestQueue(getApplication());
+        String url = "https://api.exchangerate.host/convert?from=USD&to=CHF";
+
+// Request a string response from the provided URL.
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+                new com.android.volley.Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONObject jsonObject = new JSONObject(response);
+                            String ss = jsonObject.getString("result");
+                            pr5.setValue(ss);
+
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+
+                    }
+                });
+
+// Add the request to the RequestQueue.
+        queue.add(stringRequest);
+    }
+
+    public void getdata6() {
+        RequestQueue queue = Volley.newRequestQueue(getApplication());
+        String url = "https://api.exchangerate.host/convert?from=USD&to=CHD";
+
+// Request a string response from the provided URL.
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+                new com.android.volley.Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONObject jsonObject = new JSONObject(response);
+                            String ss = jsonObject.getString("result");
+                            pr6.setValue(ss);
+
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+
+                    }
+                });
+
+// Add the request to the RequestQueue.
+        queue.add(stringRequest);
+    }
+
+    public void getdata7() {
+        RequestQueue queue = Volley.newRequestQueue(getApplication());
+        String url = "https://api.exchangerate.host/convert?from=USD&to=ZAR";
+
+// Request a string response from the provided URL.
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+                new com.android.volley.Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONObject jsonObject = new JSONObject(response);
+                            String ss = jsonObject.getString("result");
+                            pr7.setValue(ss);
+
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+
+                    }
+                });
+
+// Add the request to the RequestQueue.
+        queue.add(stringRequest);
+    }
+
+    public void getdata8() {
+        RequestQueue queue = Volley.newRequestQueue(getApplication());
+        String url = "https://api.exchangerate.host/convert?from=AUD&to=USD";
+
+// Request a string response from the provided URL.
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+                new com.android.volley.Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONObject jsonObject = new JSONObject(response);
+                            String ss = jsonObject.getString("result");
+                            pr8.setValue(ss);
+
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+
+                    }
+                });
+
+// Add the request to the RequestQueue.
+        queue.add(stringRequest);
+    }
+    public void getdata9() {
+        RequestQueue queue = Volley.newRequestQueue(getApplication());
+        String url = "https://api.exchangerate.host/convert?from=AUD&to=USD";
+
+// Request a string response from the provided URL.
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+                new com.android.volley.Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONObject jsonObject = new JSONObject(response);
+                            String ss = jsonObject.getString("result");
+                            pr9.setValue(ss);
+
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+
+                    }
+                });
+
+// Add the request to the RequestQueue.
+        queue.add(stringRequest);
+    }
     public MutableLiveData<String> getTextrate1() {
         return pr1;
     }

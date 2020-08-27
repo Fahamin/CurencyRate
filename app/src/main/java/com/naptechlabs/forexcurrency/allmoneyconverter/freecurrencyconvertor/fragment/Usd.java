@@ -17,11 +17,13 @@ import android.widget.TextView;
 import com.naptechlabs.forexcurrency.allmoneyconverter.freecurrencyconvertor.R;
 import com.naptechlabs.forexcurrency.allmoneyconverter.freecurrencyconvertor.viewmodel.UsdViewModel;
 
+import java.text.DecimalFormat;
+
 public class Usd extends Fragment {
 
     private UsdViewModel dashboardViewModel;
     TextView dateTv;
-
+    DecimalFormat df;
     TextView e1, e2, e3, e4, e5, e6, e7, e8, e9, e10, e11, e12, e13, e14, e15, e16, e17, e18, e19,
             e20, e21, e22, e23, e24, e25, e26, e27, e28, e29, e30, e31, e32;
 
@@ -40,7 +42,9 @@ public class Usd extends Fragment {
         super.onActivityCreated(savedInstanceState);
         dashboardViewModel = ViewModelProviders.of(this).get(UsdViewModel.class);
         // TODO: Use the ViewModel
+        df = new DecimalFormat("#.##");
         dataFound();
+
     }
 
     private void dataFound() {
@@ -48,164 +52,258 @@ public class Usd extends Fragment {
         dashboardViewModel.getTexte1().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(String s) {
-                e1.setText(s);
+                Double i1 = Double.parseDouble(s);
+                i1 = Double.valueOf(df.format(i1));
+                e1.setText(String.valueOf(i1));
 
             }
         });
         dashboardViewModel.getTexte2().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(String s) {
-                e2.setText(s);
+                Double i2 = Double.parseDouble(s);
+                i2 = Double.valueOf(df.format(i2));
+                e2.setText(String.valueOf(i2));
             }
-        });   dashboardViewModel.getTexte3().observe(getViewLifecycleOwner(), new Observer<String>() {
+        });
+        dashboardViewModel.getTexte3().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(String s) {
-                e3.setText(s);
+                Double i3 = Double.parseDouble(s);
+                i3 = Double.valueOf(df.format(i3));
+                e3.setText(String.valueOf(i3));
             }
-        });   dashboardViewModel.getTexte4().observe(getViewLifecycleOwner(), new Observer<String>() {
+        });
+        dashboardViewModel.getTexte4().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(String s) {
-                e4.setText(s);
+                Double i4 = Double.parseDouble(s);
+                i4 = Double.valueOf(df.format(i4));
+                e4.setText(String.valueOf(i4));
             }
-        });   dashboardViewModel.getTexte5().observe(getViewLifecycleOwner(), new Observer<String>() {
+        });
+        dashboardViewModel.getTexte5().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(String s) {
-                e5.setText(s);
+                Double i5 = Double.parseDouble(s);
+                i5 = Double.valueOf(df.format(i5));
+                e5.setText(String.valueOf(i5));
             }
-        });   dashboardViewModel.getTexte6().observe(getViewLifecycleOwner(), new Observer<String>() {
+        });
+        dashboardViewModel.getTexte6().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(String s) {
-                e6.setText(s);
+                Double i6 = Double.parseDouble(s);
+                i6 = Double.valueOf(df.format(i6));
+                e6.setText(String.valueOf(i6));
             }
-        });   dashboardViewModel.getTexte7().observe(getViewLifecycleOwner(), new Observer<String>() {
+        });
+        dashboardViewModel.getTexte7().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(String s) {
-                e7.setText(s);
+                Double i6 = Double.parseDouble(s);
+                i6 = Double.valueOf(df.format(i6));
+                e7.setText(String.valueOf(i6));
             }
-        });   dashboardViewModel.getTexte8().observe(getViewLifecycleOwner(), new Observer<String>() {
+        });
+        dashboardViewModel.getTexte8().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(String s) {
-                e8.setText(s);
+                Double i6 = Double.parseDouble(s);
+                i6 = Double.valueOf(df.format(i6));
+                e8.setText(String.valueOf(i6));
             }
-        });   dashboardViewModel.getTexte9().observe(getViewLifecycleOwner(), new Observer<String>() {
+        });
+        dashboardViewModel.getTexte9().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(String s) {
-                e9.setText(s);
+                Double i6 = Double.parseDouble(s);
+                i6 = Double.valueOf(df.format(i6));
+                e9.setText(String.valueOf(i6));
             }
-        });   dashboardViewModel.getTexte10().observe(getViewLifecycleOwner(), new Observer<String>() {
+        });
+        dashboardViewModel.getTexte10().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(String s) {
-                e10.setText(s);
+                Double i6 = Double.parseDouble(s);
+                i6 = Double.valueOf(df.format(i6));
+                e10.setText(String.valueOf(i6));
             }
-        });   dashboardViewModel.getTexte11().observe(getViewLifecycleOwner(), new Observer<String>() {
+        });
+        dashboardViewModel.getTexte11().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(String s) {
-                e11.setText(s);
+                Double i6 = Double.parseDouble(s);
+                i6 = Double.valueOf(df.format(i6));
+                e11.setText(String.valueOf(i6));
             }
-        });   dashboardViewModel.getTexte12().observe(getViewLifecycleOwner(), new Observer<String>() {
+        });
+        dashboardViewModel.getTexte12().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(String s) {
-                e12.setText(s);
+                Double i6 = Double.parseDouble(s);
+                i6 = Double.valueOf(df.format(i6));
+                e12.setText(String.valueOf(i6));
             }
-        });   dashboardViewModel.getTexte13().observe(getViewLifecycleOwner(), new Observer<String>() {
+        });
+        dashboardViewModel.getTexte13().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(String s) {
-                e13.setText(s);
+                Double i6 = Double.parseDouble(s);
+                i6 = Double.valueOf(df.format(i6));
+                e13.setText(String.valueOf(i6));
             }
-        });   dashboardViewModel.getTexte14().observe(getViewLifecycleOwner(), new Observer<String>() {
+        });
+        dashboardViewModel.getTexte14().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(String s) {
-                e14.setText(s);
+                Double i6 = Double.parseDouble(s);
+                i6 = Double.valueOf(df.format(i6));
+                e14.setText(String.valueOf(i6));
             }
-        });   dashboardViewModel.getTexte15().observe(getViewLifecycleOwner(), new Observer<String>() {
+        });
+        dashboardViewModel.getTexte15().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(String s) {
-                e15.setText(s);
+                Double i6 = Double.parseDouble(s);
+                i6 = Double.valueOf(df.format(i6));
+                e15.setText(String.valueOf(i6));
             }
-        });   dashboardViewModel.getTexte16().observe(getViewLifecycleOwner(), new Observer<String>() {
+        });
+        dashboardViewModel.getTexte16().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(String s) {
-                e16.setText(s);
+                Double i6 = Double.parseDouble(s);
+                i6 = Double.valueOf(df.format(i6));
+                e16.setText(String.valueOf(i6));
             }
-        });   dashboardViewModel.getTexte17().observe(getViewLifecycleOwner(), new Observer<String>() {
+        });
+        dashboardViewModel.getTexte17().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(String s) {
-                e17.setText(s);
+                Double i6 = Double.parseDouble(s);
+                i6 = Double.valueOf(df.format(i6));
+                e17.setText(String.valueOf(i6));
             }
-        });   dashboardViewModel.getTexte18().observe(getViewLifecycleOwner(), new Observer<String>() {
+        });
+        dashboardViewModel.getTexte18().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(String s) {
-                e18.setText(s);
+                Double i6 = Double.parseDouble(s);
+                i6 = Double.valueOf(df.format(i6));
+                e18.setText(String.valueOf(i6));
             }
-        });   dashboardViewModel.getTexte19().observe(getViewLifecycleOwner(), new Observer<String>() {
+        });
+        dashboardViewModel.getTexte19().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(String s) {
-                e19.setText(s);
+                Double i6 = Double.parseDouble(s);
+                i6 = Double.valueOf(df.format(i6));
+                e19.setText(String.valueOf(i6));
             }
-        });   dashboardViewModel.getTexte20().observe(getViewLifecycleOwner(), new Observer<String>() {
+        });
+        dashboardViewModel.getTexte20().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(String s) {
-                e20.setText(s);
+                Double i6 = Double.parseDouble(s);
+                i6 = Double.valueOf(df.format(i6));
+                e20.setText(String.valueOf(i6));
             }
-        });   dashboardViewModel.getTexte21().observe(getViewLifecycleOwner(), new Observer<String>() {
+        });
+        dashboardViewModel.getTexte21().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(String s) {
-                e21.setText(s);
+                Double i6 = Double.parseDouble(s);
+                i6 = Double.valueOf(df.format(i6));
+                e21.setText(String.valueOf(i6));
             }
-        });   dashboardViewModel.getTexte22().observe(getViewLifecycleOwner(), new Observer<String>() {
+        });
+        dashboardViewModel.getTexte22().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(String s) {
-                e22.setText(s);
+                Double i6 = Double.parseDouble(s);
+                i6 = Double.valueOf(df.format(i6));
+                e22.setText(String.valueOf(i6));
             }
-        });   dashboardViewModel.getTexte23().observe(getViewLifecycleOwner(), new Observer<String>() {
+        });
+        dashboardViewModel.getTexte23().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(String s) {
-                e23.setText(s);
+                Double i6 = Double.parseDouble(s);
+                i6 = Double.valueOf(df.format(i6));
+                e23.setText(String.valueOf(i6));
             }
-        });   dashboardViewModel.getTexte24().observe(getViewLifecycleOwner(), new Observer<String>() {
+        });
+        dashboardViewModel.getTexte24().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(String s) {
-                e24.setText(s);
+                Double i6 = Double.parseDouble(s);
+                i6 = Double.valueOf(df.format(i6));
+                e24.setText(String.valueOf(i6));
             }
-        });   dashboardViewModel.getTexte25().observe(getViewLifecycleOwner(), new Observer<String>() {
+        });
+        dashboardViewModel.getTexte25().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(String s) {
-                e25.setText(s);
+                Double i6 = Double.parseDouble(s);
+                i6 = Double.valueOf(df.format(i6));
+                e25.setText(String.valueOf(i6));
             }
-        });   dashboardViewModel.getTexte26().observe(getViewLifecycleOwner(), new Observer<String>() {
+        });
+        dashboardViewModel.getTexte26().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(String s) {
-                e26.setText(s);
+                Double i6 = Double.parseDouble(s);
+                i6 = Double.valueOf(df.format(i6));
+                e26.setText(String.valueOf(i6));
             }
-        });   dashboardViewModel.getTexte27().observe(getViewLifecycleOwner(), new Observer<String>() {
+        });
+        dashboardViewModel.getTexte27().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(String s) {
-                e27.setText(s);
+                Double i6 = Double.parseDouble(s);
+                i6 = Double.valueOf(df.format(i6));
+                e27.setText(String.valueOf(i6));
             }
-        });   dashboardViewModel.getTexte28().observe(getViewLifecycleOwner(), new Observer<String>() {
+        });
+        dashboardViewModel.getTexte28().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(String s) {
-                e28.setText(s);
+                Double i6 = Double.parseDouble(s);
+                i6 = Double.valueOf(df.format(i6));
+                e28.setText(String.valueOf(i6));
             }
-        });   dashboardViewModel.getTexte29().observe(getViewLifecycleOwner(), new Observer<String>() {
+        });
+        dashboardViewModel.getTexte29().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(String s) {
-                e29.setText(s);
+                Double i6 = Double.parseDouble(s);
+                i6 = Double.valueOf(df.format(i6));
+                e29.setText(String.valueOf(i6));
             }
-        });   dashboardViewModel.getTexte30().observe(getViewLifecycleOwner(), new Observer<String>() {
+        });
+        dashboardViewModel.getTexte30().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(String s) {
-                e30.setText(s);
+                Double i6 = Double.parseDouble(s);
+                i6 = Double.valueOf(df.format(i6));
+                e30.setText(String.valueOf(i6));
             }
-        });   dashboardViewModel.getTexte31().observe(getViewLifecycleOwner(), new Observer<String>() {
+        });
+        dashboardViewModel.getTexte31().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(String s) {
-                e31.setText(s);
+                Double i6 = Double.parseDouble(s);
+                i6 = Double.valueOf(df.format(i6));
+                e31.setText(String.valueOf(i6));
             }
-        });   dashboardViewModel.getTexte32().observe(getViewLifecycleOwner(), new Observer<String>() {
+        });
+        dashboardViewModel.getTexte32().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(String s) {
-                e32.setText(s);
+                Double i6 = Double.parseDouble(s);
+                i6 = Double.valueOf(df.format(i6));
+                e32.setText(String.valueOf(i6));
             }
         });
     }
@@ -217,7 +315,6 @@ public class Usd extends Fragment {
     }
 
     private void init(View view) {
-        dateTv = view.findViewById(R.id.dateIdTV);
         e1 = view.findViewById(R.id.e1TvId);
         e2 = view.findViewById(R.id.e2TvId);
         e3 = view.findViewById(R.id.e3TvId);

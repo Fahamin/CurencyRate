@@ -36,6 +36,15 @@ public class Lattest extends Fragment {
     }
 
     @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        init(view);
+        datagetFun();
+
+
+    }
+
+    @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         homeViewModel = ViewModelProviders.of(this).get(LattestViewModel.class);
@@ -47,140 +56,84 @@ public class Lattest extends Fragment {
             public void onChanged(String s) {
 
                 pr1TV.setText(s);
-                float i = 1/Float.parseFloat(s);
+               /* float i = 1/Float.parseFloat(s);
                 String sm = String.valueOf(i);
-                pm1TV.setText((sm));
+                pm1TV.setText((sm));*/
             }
         });
-        homeViewModel.getTexttime1().observe(getViewLifecycleOwner(), new Observer<String>() {
+       /* homeViewModel.getTexttime1().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 pt1TV.setText(s);
 
             }
-        });
+        });*/
         homeViewModel.getTextreate2().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(String s) {
                 pr2TV.setText(s);
-                float i = 1/Float.parseFloat(s);
-                String sm = String.valueOf(i);
-                pm2TV.setText((sm));
+
 
             }
         });
-        homeViewModel.getTexttime2().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                pt2TV.setText(s);
-            }
-        });
+
         homeViewModel.getTextrate3().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(String s) {
                 pr3TV.setText(s);
-                float i = 1/Float.parseFloat(s);
-                String sm = String.valueOf(i);
-                pm3TV.setText((sm));
+
             }
         });
-        homeViewModel.getTexttime3().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                pt3TV.setText(s);
-            }
-        });
+
         homeViewModel.getTextreate4().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(String s) {
                 pr4TV.setText(s);
-                float i = 1/Float.parseFloat(s);
-                String sm = String.valueOf(i);
-                pm4TV.setText((sm));
+
             }
         });
-        homeViewModel.getTexttime4().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                pt4TV.setText(s);
-            }
-        });
+
         homeViewModel.getTextrate5().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(String s) {
                 pr5TV.setText(s);
-                float i = 1/Float.parseFloat(s);
-                String sm = String.valueOf(i);
-                pm5TV.setText((sm));
+
             }
         });
-        homeViewModel.getTexttime5().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                pt5TV.setText(s);
-            }
-        });
+
         homeViewModel.getTextreate6().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(String s) {
                 pr6TV.setText(s);
-                float i = 1/Float.parseFloat(s);
-                String sm = String.valueOf(i);
-                pm6TV.setText((sm));
+
             }
         });
-        homeViewModel.getTexttime6().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                pt6TV.setText(s);
-            }
-        });
+
 
         homeViewModel.getTextrate7().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(String s) {
                 pr7TV.setText(s);
-                float i = 1/Float.parseFloat(s);
-                String sm = String.valueOf(i);
-                pm7TV.setText((sm));
+
             }
         });
-        homeViewModel.getTexttime7().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                pt7TV.setText(s);
-            }
-        });
+
         homeViewModel.getTextreate8().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(String s) {
                 pr8TV.setText(s);
-                float i = 1/Float.parseFloat(s);
-                String sm = String.valueOf(i);
-                pm8TV.setText((sm));
+
             }
         });
-        homeViewModel.getTexttime8().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                pt8TV.setText(s);
-            }
-        });
+
         homeViewModel.getTextreate9().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(String s) {
                 pr9TV.setText(s);
-                float i = 1/Float.parseFloat(s);
-                String sm = String.valueOf(i);
-                pm9TV.setText((sm));
+
             }
         });
-        homeViewModel.getTexttime9().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                pt9TV.setText(s);
-            }
-        });
+
     }
 
     private void init(View view) {

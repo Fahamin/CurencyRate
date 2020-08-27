@@ -34,15 +34,15 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
         // getItem is called to instantiate the fragment for the given page.
         // Return a PlaceholderFragment (defined as a static inner class below).
 
-        if(position == 0)
+       /* if(position == 0)
         {
             return  new Lattest();
-        }
-        if(position == 1)
+        }*/
+        if(position == 0)
         {
             return  new Eur();
         }
-        if(position == 2)
+        if(position == 1)
         {
             return  new Usd();
         }
@@ -58,6 +58,6 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
     @Override
     public int getCount() {
         // Show 2 total pages.
-        return 3;
+        return 2;
     }
 }
